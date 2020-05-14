@@ -1,3 +1,4 @@
+import kotlin.random.Random
 
 fun main(args: Array<String>){
     var vector = Vector(4.0, 6.0, 10.0)
@@ -16,4 +17,13 @@ fun main(args: Array<String>){
     println(vector.times(vector2))
     println(vector.plus(vector2))
     println(vector.minus(vector2))
+
+    var number: Int = Random.nextInt(5,10)
+    var vectors = vector.arrayVectors(number)
+    for (vector in vectors){
+        println("$vector" + " ")
+    }
+
+
+
 }

@@ -1,6 +1,8 @@
 import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sqrt
+import kotlin.random.Random
+
 
 
 class Vector (var x: Double, var y: Double, var z:Double){
@@ -43,4 +45,10 @@ class Vector (var x: Double, var y: Double, var z:Double){
         this.x-vector.x
     )
 
+    fun arrayVectors(number: Int): Array<Vector> {
+            var mass = Array(number){ Vector(Random.nextDouble(1.0,100.00),
+                Random.nextDouble(1.0, 100.0),
+                Random.nextDouble(1.0,100.0))}
+            return mass
+        }
 }
