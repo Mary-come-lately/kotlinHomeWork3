@@ -2,13 +2,17 @@ import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-public class Vector (var x: Double, var y: Double, var z:Double){
 
+class Vector (var x: Double, var y: Double, var z:Double){
 
-fun vectolLength(): Double {
-    var length = sqrt((x.pow(2)+y.pow(2)+z.pow(2)))
-    return length
-}
+    override fun toString(): String {
+        return "x = $x  y = $y  z = $z"
+    }
+
+    fun vectolLength(): Double {
+            var length = sqrt((x.pow(2)+y.pow(2)+z.pow(2)))
+            return length
+        }
 
     fun scalarProduct(vector: Vector): Double {
 
@@ -27,5 +31,16 @@ fun vectolLength(): Double {
         return result
     }
 
+    operator fun plus(vector: Vector): Vector = Vector(
+        this.y+vector.y,
+        this.z*vector.z,
+        this.x*vector.x
+    )
+
+    operator fun minus(vector: Vector): Vector = Vector(
+        this.y-vector.y,
+        this.z-vector.z,
+        this.x-vector.x
+    )
 
 }
